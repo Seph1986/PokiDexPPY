@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset = "UTF-8">
+        <title>Pokedex Programando PY </title>
+        <link rel="icon" type="image/png" href="img/pokeball.png">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <script src="script.js" defer></script>
+    </head>
+    <body onclick="playAudio()">
+                <div id="popupContainer">
+                    <div id="popupOverlay"></div>
+                    <div id="popupContent">
+                        <h2>Ayuda</h2>
+                        <p>Para utilizar este sitio web, simplemente ingresa el nombre del Pokemon que deseas buscar en la barra de búsqueda. El sitio te mostrará su número en la Pokedex, sus tipos y estadísticas, incluyendo HP, Ataque, Defensa, Ataque Especial, Defensa Especial y Velocidad. Además, el sitio te permitirá buscar hasta 6 Pokemones a la vez. ¡Es así de fácil y rápido obtener la información que necesitas sobre tus Pokemon favoritos!</p>
+                        <button id="closeButton">Cerrar</button>
+                    </div>
+                </div>
+                <div class="logoContainer">
+                    <img src="img/pokemon-logo.png.png" alt="Logo de Pokémon" class="logoPokemon">
+                </div> 
+                <div id="InAndButtContainer">  
+                        <input class="pokemon" id="buscador" placeholder="Buscar Pokémon" type="text" onkeypress="enterPokemon(event)" />
+                        <div id="buttonContainer">
+                            <button id="stopMusic"></button>
+                            <button id="infoButton"></button>
+                        </div>  
+                </div>
+                <main class="flex"></main> 
+                    <template id="template">
+                        <article class="card">
+                            <div id="topCard">
+                                <div class="dexNumber"></div>
+                                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png" class="cardBodyImage">
+                                <h1 class="cardBodyPokemon"></h1>
+                            </div>
+                            <div id="cardBody">
+                                <div class="cardBodyType">
+                                    <h3></h3>
+                                    <h3></h3>
+                                </div>
+                            </div>
+                            <div class="cardBottom">
+                                <div class="cardBottomPs">
+                                    <p>PS</p>
+                                    <h3></h3>
+                                </div>
+                                <div class="cardBottomAtk">
+                                    <p>Ataque</p>
+                                    <h3></h3>
+                                </div>
+                                <div class="cardBottomDef">
+                                    <p>Defensa</p>
+                                    <h3></h3>
+                                </div>
+                                <div class="cardBottomSpAtk">
+                                    <p>Ataque Especial</p>
+                                    <h3></h3>
+                                </div>
+                                <div class="cardBottomSpDef">
+                                    <p>Defensa Especial</p>
+                                    <h3></h3>
+                                </div>
+                                <div class="cardBottomSpeed">
+                                    <p>Velocidad</p>
+                                    <h3></h3>
+                                </div>
+                            </div>
+                    </article>
+                </div>
+                </template>
+                <div class="buttonContainer">
+                    <div class="pokeball">
+                        <button class="pokemonReset"></button>
+                    </div>
+                </div>
+                <audio id="audio1" autoplay loop >
+                    <source src="audio/03_Title_Screen.mp3" type="audio/mpeg" volume=50%> 
+                </audio>
+    </body>
+</html>
