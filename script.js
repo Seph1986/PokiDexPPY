@@ -33,7 +33,7 @@ function findPokemon () {
       fetch(url)
           .then(function(response) {
             if (!response.ok) {
-              window.alert("Pokemon no econtrado")
+              window.alert("Pokemon no encontrado")
               throw Error(response.statusText);
             }
             return response.json();
@@ -52,6 +52,9 @@ let pokemonCount= 0;
     const showPokemon = (pokemon) => {
       if (pokemonCount < 6) {
         pokemonCount++;
+        if(pokemonCount === 6){
+          window.alert('Llegaste al maximo de POKEMONES')
+        }
         console.log(pokemon)
         
         const flex = document.querySelector('.flex');
